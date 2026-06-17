@@ -33,6 +33,16 @@ jobs:
           flutter --version
           flutter doctor -v
 
+      - name: Show repository files
+        run: |
+          pwd
+          ls -la
+          if [ -f pubspec.yaml ]; then
+            echo "pubspec.yaml exists"
+          else
+            echo "pubspec.yaml missing"
+          fi
+
       - name: Install dependencies
         run: flutter pub get
 
